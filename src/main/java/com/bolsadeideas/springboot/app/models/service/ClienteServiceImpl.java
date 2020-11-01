@@ -9,13 +9,22 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bolsadeideas.springboot.app.models.dao.IClienteDao;
+import com.bolsadeideas.springboot.app.models.dao.IFacturaDao;
+import com.bolsadeideas.springboot.app.models.dao.IProductoDao;
 import com.bolsadeideas.springboot.app.models.entity.Cliente;
+import com.bolsadeideas.springboot.app.models.entity.Factura;
+import com.bolsadeideas.springboot.app.models.entity.Producto;
 
 @Service
 public class ClienteServiceImpl implements IClienteService {
 
 	@Autowired
 	private IClienteDao clienteDao;
+	
+	@Autowired
+	private IProductoDao iproductoDao;
+	@Autowired
+	private IFacturaDao ifacturaDao;
 	
 	@Override
 	@Transactional(readOnly = true)
@@ -47,5 +56,25 @@ public class ClienteServiceImpl implements IClienteService {
 	@Transactional(readOnly = true)
 	public Page<Cliente> findAll(Pageable pageable) {
 		return clienteDao.findAll(pageable);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Producto> findByNombre(String term) {
+		return iproductoDao.findByNombreLikeIgnoreCase("%" + term + "%");
+	}
+
+	@Override
+	@Transactional
+	public void saveFactura(Factura factura) {
+		ifacturaDao.save(factura);
+		
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Producto findProductoById(Long id) {
+		return iproductoDao.findById(id).orElse(null);
+		 
 	}
 }

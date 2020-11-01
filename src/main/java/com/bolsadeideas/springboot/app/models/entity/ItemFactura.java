@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="item_facturas")
+@Table(name="facturas_items")
 public class ItemFactura implements Serializable {
 
 	@Id
@@ -40,9 +40,21 @@ public class ItemFactura implements Serializable {
 		this.cantidad = cantidad;
 	}
 	
-	public Double cacularImporte() {
+	public Double calcularImporte() {
 		return cantidad.doubleValue()*producto.getPrecio();
 	}
+	
+	
+
+	public Producto getProducto() {
+		return producto;
+	}
+
+	public void setProducto(Producto producto) {
+		this.producto = producto;
+	}
+
+
 
 	private static final long serialVersionUID = 1L;
 
