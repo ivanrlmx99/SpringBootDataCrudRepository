@@ -24,6 +24,8 @@ public class Producto implements Serializable {
 	private String nombre;
 
 	private Double precio;
+//	@Column(name="cantidad_articulos")
+//	private Double cantidadArticulos;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "create_at")
@@ -65,6 +67,9 @@ public class Producto implements Serializable {
 	public void setCreateAt(Date createAt) {
 		this.createAt = createAt;
 	}
+	
+
+
 
 	private static final long serialVersionUID = 1L;
 

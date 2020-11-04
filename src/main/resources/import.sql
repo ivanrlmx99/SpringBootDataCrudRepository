@@ -27,6 +27,20 @@ INSERT INTO productos (nombre, precio, create_at) VALUES('Celular', 6000, NOW())
 INSERT INTO productos (nombre, precio, create_at) VALUES('Mochila', 800, NOW());
 INSERT INTO productos (nombre, precio, create_at) VALUES('reloj digital', 2000, NOW());
 
+/* Populate tabla productos con campo cantidad */
+-- INSERT INTO productos (nombre, precio,cantidad_articulos, create_at) VALUES('Panasonic Pantalla LCD', 700,50, NOW());
+-- INSERT INTO productos (nombre, precio,cantidad_articulos, create_at) VALUES('Sony Camara digital DSC-W320B', 490,50 NOW());
+-- INSERT INTO productos (nombre, precio,cantidad_articulos, create_at) VALUES('Apple iPod shuffle', 990,50, NOW());
+-- INSERT INTO productos (nombre, precio,cantidad_articulos, create_at) VALUES('Sony Notebook Z110', 379,50, NOW());
+-- INSERT INTO productos (nombre, precio,cantidad_articulos, create_at) VALUES('Hewlett Packard Multifuncional F2280', 6000,50, NOW());
+-- INSERT INTO productos (nombre, precio,cantidad_articulos, create_at) VALUES('Bianchi Bicicleta Aro 26', 800,50 NOW());
+-- INSERT INTO productos (nombre, precio,cantidad_articulos, create_at) VALUES('Mica Comoda 5 Cajones', 299990,50 NOW());
+-- INSERT INTO productos (nombre, precio,cantidad_articulos, create_at) VALUES('Celular', 6000,50 NOW());
+-- INSERT INTO productos (nombre, precio,cantidad_articulos, create_at) VALUES('Mochila', 800,50 NOW());
+-- INSERT INTO productos (nombre, precio,cantidad_articulos, create_at) VALUES('reloj digital', 2000,50 NOW());
+
+
+
 /* Creamos algunas facturas */
 INSERT INTO facturas (descripcion, observacion, cliente_id, create_at) VALUES('Factura equipos de oficina', null, 1, NOW());
 INSERT INTO facturas_items (cantidad, factura_id, producto_id) VALUES(1, 1, 1);
