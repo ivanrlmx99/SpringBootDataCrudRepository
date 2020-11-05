@@ -17,6 +17,9 @@ public interface IClienteService {
 
 	public void save(Cliente cliente);
 	
+	public void savePro(Producto producto);
+	
+	
 	public Cliente findOne(Long id);
 	
 	public Cliente fethByIdWithFacturas(Long id);
