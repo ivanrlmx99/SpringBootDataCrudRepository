@@ -89,7 +89,7 @@ public class ClienteController {
 		return "listar";
 	}
 
-	@RequestMapping(value = "/formularioRegistro")
+	@RequestMapping(value = "/form")
 	public String crear(Map<String, Object> model) {
 
 		Cliente cliente = new Cliente();
@@ -98,7 +98,7 @@ public class ClienteController {
 		return "form";
 	}
 
-	@RequestMapping(value = "/formularioRegistro/{id}")
+	@RequestMapping(value = "/form/{id}")
 	public String editar(@PathVariable(value = "id") Long id, Map<String, Object> model, RedirectAttributes flash) {
 
 		Cliente cliente = null;
@@ -118,7 +118,7 @@ public class ClienteController {
 		return "form";
 	}
 
-	@RequestMapping(value = "/formularioRegistro", method = RequestMethod.POST)
+	@RequestMapping(value = "/form", method = RequestMethod.POST)
 	public String guardar(@Valid Cliente cliente, BindingResult result, Model model,
 			@RequestParam("file") MultipartFile foto, RedirectAttributes flash, SessionStatus status) {
 

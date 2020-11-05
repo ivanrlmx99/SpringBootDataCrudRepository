@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout/layout :: head"></head>
+<head th:replace="layout/layout :: head"/>
 <body>
 
 	<header th:replace="layout/layout :: header"></header>
@@ -24,7 +24,7 @@
 						<div class="col-sm-6">
 							<input name="cliente"
 								th:value="${factura.cliente.nombre} + ' ' + ${factura.cliente.apellido}"
-								class="form-control" disabled='disabled' />
+								class="form-control"disabled='disabled'/>
 						</div>
 					</div>
 

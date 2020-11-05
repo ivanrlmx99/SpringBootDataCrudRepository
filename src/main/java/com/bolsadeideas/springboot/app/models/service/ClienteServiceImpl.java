@@ -102,13 +102,7 @@ public class ClienteServiceImpl implements IClienteService {
 		return ifacturaDao.fetchByIdWithClienteWhithItemFacturaWithProducto(id);
 	}
 
-	@Override
-	@Transactional
-	public void savePro(Producto producto) {
-		
-		iproductoDao.save(producto);
-		
-	}
+	
 
 	
 }
